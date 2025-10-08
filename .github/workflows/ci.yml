@@ -27,7 +27,7 @@ jobs:
       run: bundle install
     
     - name: Set up database
-      run: ruby db/migrate.rb
+      run: bundle exec ruby db/migrate.rb
     
     - name: Run tests
       run: bundle exec rspec --format documentation

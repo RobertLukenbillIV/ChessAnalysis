@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby '3.4.1'
 
 # Web framework
-gem 'sinatra', '~> 3.0'
-gem 'sinatra-contrib', '~> 3.0'
+gem 'sinatra', '~> 4.1'
+gem 'sinatra-contrib', '~> 4.1'
 
 # Database
 gem 'sequel', '~> 5.70'

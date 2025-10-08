@@ -1,0 +1,102 @@
+/* Chessboard Styles */
+.chessboard {
+    width: 480px;
+    height: 480px;
+    border: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    margin: 0 auto;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.square.light {
+    background-color: #f0d9b5;
+}
+
+.square.dark {
+    background-color: #b58863;
+}
+
+.square.highlighted {
+    background-color: #f7dc6f !important;
+}
+
+.square.selected {
+    background-color: #85c1e9 !important;
+}
+
+.square.possible-move {
+    background-color: #aed6f1 !important;
+}
+
+.square.check {
+    background-color: #ff6b6b !important;
+}
+
+.piece {
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Chess piece Unicode symbols */
+.piece.white.king::before { content: '♔'; }
+.piece.white.queen::before { content: '♕'; }
+.piece.white.rook::before { content: '♖'; }
+.piece.white.bishop::before { content: '♗'; }
+.piece.white.knight::before { content: '♘'; }
+.piece.white.pawn::before { content: '♙'; }
+
+.piece.black.king::before { content: '♚'; }
+.piece.black.queen::before { content: '♛'; }
+.piece.black.rook::before { content: '♜'; }
+.piece.black.bishop::before { content: '♝'; }
+.piece.black.knight::before { content: '♞'; }
+.piece.black.pawn::before { content: '♟'; }
+
+/* Board coordinates */
+.file-label, .rank-label {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.file-label {
+    bottom: 2px;
+    right: 4px;
+}
+
+.rank-label {
+    top: 2px;
+    left: 4px;
+}
+
+/* Animation for piece movement */
+@keyframes piece-move {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.piece.moving {
+    animation: piece-move 0.3s ease-in-out;
+}

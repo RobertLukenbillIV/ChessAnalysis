@@ -1,0 +1,55 @@
+# RuboCop configuration for Chess Analysis project
+
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+
+# Style Cops
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Layout Cops
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Metrics Cops
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'app.rb'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'app.rb'
+
+Metrics/ClassLength:
+  Max: 150
+
+# Naming Cops
+Naming/PredicatePrefix:
+  ForbiddenPrefixes:
+    - is_
+
+# Security Cops
+Security/Open:
+  Enabled: true

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Chess Analysis</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chess Analysis Statistics</h1>
+            <nav>
+                <a href="/" class="nav-link">Main Menu</a>
+                <a href="/game" class="nav-link">Start Game</a>
+            </nav>
+        </header>
+
+        <main class="statistics-container">
+            <div class="stats-section">
+                <h2>Import/Export Data</h2>
+                <div class="import-export-controls">
+                    <input type="file" id="import-file" accept=".json" style="display:none;">
+                    <button id="import-btn" class="control-btn">Import Games</button>
+                    <button id="export-btn" class="control-btn">Export Games</button>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h2>Opening Statistics</h2>
+                <div class="table-container">
+                    <table id="openings-table">
+                        <thead>
+                            <tr>
+                                <th>Opening Name</th>
+                                <th>Position</th>
+                                <th>Use Rate</th>
+                                <th>Success Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="openings-tbody">
+                            <!-- Data will be loaded via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h2>Endgame Position Statistics</h2>
+                <div class="table-container">
+                    <table id="endgame-table">
+                        <thead>
+                            <tr>
+                                <th>Position Name</th>
+                                <th>Position</th>
+                                <th>Use Rate</th>
+                                <th>Success Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="endgame-tbody">
+                            <!-- Data will be loaded via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal for position replay -->
+        <div id="replay-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Position Replay</h3>
+                <div id="replay-board"></div>
+                <div class="replay-controls">
+                    <button id="replay-start">Start</button>
+                    <button id="replay-step">Step Forward</button>
+                    <button id="replay-reset">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/chessboard.js"></script>
+    <script src="/js/statistics.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game - Chess Analysis</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/chessboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chess Game</h1>
+            <nav>
+                <a href="/" class="nav-link">Main Menu</a>
+                <a href="/statistics" class="nav-link">Statistics</a>
+            </nav>
+        </header>
+
+        <main class="game-container">
+            <div class="game-info">
+                <div id="game-status">Game in progress</div>
+                <div id="current-player">White to move</div>
+                <div id="move-history"></div>
+            </div>
+
+            <div class="chessboard-container">
+                <div id="chessboard"></div>
+            </div>
+
+            <div class="game-controls">
+                <button id="resign-btn" class="control-btn">Resign</button>
+                <button id="new-game-btn" class="control-btn" style="display:none;">New Game</button>
+                <button id="return-menu-btn" class="control-btn" style="display:none;">Return to Main Menu</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/chessboard.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>

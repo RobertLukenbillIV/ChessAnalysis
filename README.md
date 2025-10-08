@@ -1,5 +1,68 @@
 # ChessAnalysis
-This project specifically focuses on Chess analysis, providing players with information on various positions, their rate of appearance and their likelihood of success from past games.
+
+A Ruby-based chess analysis application that tracks opening moves and endgame positions from played games.
+
+## Features
+
+- **Interactive Chess Game**: Play chess locally with animated moves
+- **Opening Analysis**: Track and analyze opening moves (first move by White)
+- **Endgame Statistics**: Analyze positions when one side has <7 pieces
+- **Success Rate Tracking**: Win/loss/draw statistics with 0.5 scoring for draws
+- **Data Import/Export**: JSON-based game data management
+- **FEN Notation**: Standard chess position notation support
+
+## Technology Stack
+
+- **Ruby 3.2.0**
+- **Sinatra** - Web framework
+- **SQLite3** - Embedded database
+- **Sequel** - Database ORM
+- **Chess gem** - Chess logic and notation
+- **RSpec** - Testing framework
+- **JavaScript/jQuery** - Frontend interactions
+
+## Installation
+
+```bash
+bundle install
+ruby db/migrate.rb
+ruby app.rb
+```
+
+## Testing
+
+```bash
+bundle exec rspec
+```
+
+## Game Rules Clarification
+
+1. **Winning**: Checkmate only
+2. **Openings**: Named by White's first move (e.g., "e4", "d4")
+3. **Endgame**: Position when one side has <7 pieces remaining
+4. **Success Rate**: Draws count as 0.5 for both sides
+5. **Notation**: FEN format for positions
+6. **Animation**: Move replay with step-through controls (no pause)
+7. **Data Management**: Import/export via Statistics page
+
+## Development Workflow
+
+This project follows Test-Driven Development (TDD) principles:
+
+1. Write failing tests first
+2. Implement minimal code to pass
+3. Refactor while keeping tests green
+4. Each feature in separate branch
+5. Merge only after all tests pass
+
+## Branch Strategy
+
+- `main` - Protected, production-ready code
+- `feature/chess-engine` - Game logic implementation
+- `feature/database-layer` - Data persistence
+- `feature/web-interface` - Sinatra routes and views
+- `feature/statistics` - Analysis and reporting
+- `feature/import-export` - Data management
 
 ## Requirements
 - Functionally animated basic Chess site application that is locally hosted with a local database setup.
